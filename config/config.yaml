@@ -105,26 +105,73 @@ rss:
   # - 正整数：覆盖全局设置，只推送此天数内的文章
   # - 0：禁用此频道的新鲜度过滤，推送所有文章
   feeds:
+    # 科技类
     - id: "hacker-news"
       name: "Hacker News"
       url: "https://hnrss.org/frontpage"
 
-    - id: "ruanyifeng"
-      name: "阮一峰的网络日志"
-      url: "http://www.ruanyifeng.com/blog/atom.xml"
-      enabled: false                  # 禁用
-      # max_age_days: 3               # 示例：推送 3 天内的文章（更新较慢的博客）
-     
-    - id: "yahoo-finance"
-      name: "雅虎财经"
-      url: "https://finance.yahoo.com/news/rssindex"
+    - id: "techcrunch"
+      name: "TechCrunch"
+      url: "https://techcrunch.com/feed/"
 
-    # 自定义源示例
-    # - id: "custom-feed"
-    #   name: "自定义源"
-    #   url: "https://example.com/feed.xml"
-    #   enabled: false
-    #   max_age_days: 0               # 示例：禁用过滤，推送所有文章
+    - id: "the-verge"
+      name: "The Verge"
+      url: "https://www.theverge.com/rss/index.xml"
+
+    - id: "arstechnica"
+      name: "ArsTechnica"
+      url: "https://feeds.arstechnica.com/arstechnica/index"
+
+    - id: "36kr"
+      name: "36氪"
+      url: "https://36kr.com/feed"
+
+    - id: "sspai"
+      name: "少数派"
+      url: "https://sspai.com/feed"
+
+    - id: "infoq-cn"
+      name: "InfoQ 中文"
+      url: "https://www.infoq.cn/feed"
+
+    # AI/开发类
+    - id: "openai-blog"
+      name: "OpenAI Blog"
+      url: "https://openai.com/blog/rss.xml"
+
+    - id: "huggingface-blog"
+      name: "Hugging Face Blog"
+      url: "https://huggingface.co/blog/feed.xml"
+
+    - id: "github-trending"
+      name: "GitHub Trending"
+      url: "https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml"
+
+    - id: "devto"
+      name: "Dev.to"
+      url: "https://dev.to/feed"
+
+    # 财经类
+    - id: "wallstreetcn"
+      name: "华尔街见闻"
+      url: "https://wallstreetcn.com/rss/news/global"
+
+    - id: "ruanyifeng"
+      name: "阮一峰周刊"
+      url: "https://www.ruanyifeng.com/blog/atom.xml"
+
+    # 综合/新闻类
+    - id: "nytimes-cn"
+      name: "纽约时报中文"
+      url: "https://cn.nytimes.com/rss/"
+
+    - id: "theinitium"
+      name: "端传媒"
+      url: "https://theinitium.com/newsfeed/"
+
+    - id: "huxiu"
+      name: "虎嗅"
+      url: "https://www.huxiu.com/rss/0.xml"
 
 
 # ===============================================================
