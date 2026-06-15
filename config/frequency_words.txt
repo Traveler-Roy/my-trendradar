@@ -1,12 +1,10 @@
 # ═══════════════════════════════════════════════════════════════
 #                    灵目创想 关键词配置
-#                    Agent前沿 + 向量数据库
+#                    Agent前沿 + 向量数据库 + LLM
 # ═══════════════════════════════════════════════════════════════
 
 [GLOBAL_FILTER]
-# 过滤标题党
 震惊
-# 过滤娱乐八卦
 娱乐
 八卦
 绯闻
@@ -17,74 +15,40 @@
 #                         Agent 智能体
 # ═══════════════════════════════════════════════════════════════
 
-[Agent核心]
-/Agent|智能体|Multi-Agent|多智能体|Agentic/ => Agent核心
-
-[Agent框架]
+[Agent]
+/Agent|智能体|Multi-Agent|多智能体|Agentic/ => Agent
 /LangChain|LangGraph|AutoGen|CrewAI|MetaGPT|Swarm/ => Agent框架
-
-[Agent协议]
 /\bMCP\b|\bA2A\b|Model Context Protocol|Agent-to-Agent/ => Agent协议
-
-[Agent产品]
-/Claude Code|Codex|Manus|Cursor|Operator|Devin|Windsurf|Bolt/ => Agent产品
-
-[Agent技术]
-/Function Calling|Tool Use|工具调用|ReAct|Planning|Planning Agent/ => Agent技术
-
-[Agent安全与评测]
-/Agent安全|Agent评测|\bSWE-bench\b|Agent可靠性|Agent对齐/ => Agent安全
-
-[Agent强化学习]
-/\bRL\b|\bPPO\b|\bGRPO\b|\bAReaL\b|Agent强化学习|强化学习智能体/ => Agent强化学习
-
-[GUI Agent]
-/GUI Agent|GUI智能体|屏幕理解|Computer Use|界面操作/ => GUI Agent
+/Claude Code|Codex|Manus|Cursor|Operator|Devin|Windsurf/ => Agent产品
+/Function Calling|Tool Use|工具调用|ReAct|Planning Agent/ => Agent技术
+/Agent安全|Agent评测|\bSWE-bench\b|Agent可靠性/ => Agent评测
+/GUI Agent|Computer Use|屏幕理解/ => GUI Agent
 
 # ═══════════════════════════════════════════════════════════════
 #                         向量数据库
 # ═══════════════════════════════════════════════════════════════
 
 [向量数据库]
-/向量数据库|Vector DB|Vector Database|向量检索|Vector Search/ => 向量数据库
-
-[向量数据库产品]
+/向量数据库|Vector DB|Vector Search|向量检索/ => 向量数据库
 /\bMilvus\b|\bWeaviate\b|\bPinecone\b|\bQdrant\b|\bChroma\b|\bpgvector\b|\bFAISS\b/ => 向量数据库产品
-
-[向量索引算法]
-/\bHNSW\b|\bIVF\b|\bANN\b|近似最近邻|向量索引/ => 向量索引算法
-
-[RAG]
-/\bRAG\b|检索增强生成|Retrieval Augmented/ => RAG
-
-[Embedding]
-/\bEmbedding\b|向量化|文本嵌入|向量表示/ => Embedding
+/\bHNSW\b|\bIVF\b|\bANN\b|近似最近邻/ => 向量索引
+/\bRAG\b|检索增强生成/ => RAG
+/\bEmbedding\b|向量化|文本嵌入/ => Embedding
 
 # ═══════════════════════════════════════════════════════════════
-#                         基础设施
+#                         LLM 大模型
 # ═══════════════════════════════════════════════════════════════
 
 [LLM]
-/\bLLM\b|大模型|大语言模型|Foundation Model|基础模型/ => LLM
-
-[推理优化]
-/推理优化|\bKV Cache\b|\bFlashAttention\b|推理加速|模型推理|量化推理/ => 推理优化
-
-[GPU]
-/\bGPU\b|\bCUDA\b|\bTPU\b|算力|显卡|英伟达芯片/ => GPU
-
-[模型厂商]
+/\bLLM\b|大模型|大语言模型|Foundation Model/ => LLM
+/推理优化|\bKV Cache\b|\bFlashAttention\b|推理加速/ => 推理优化
 /\bDeepSeek\b|\bQwen\b|\bLLaMA\b|\bMistral\b|\bGemma\b|\bClaude\b|\bGPT\b/ => 模型厂商
 
 # ═══════════════════════════════════════════════════════════════
 #                         论文与学术
 # ═══════════════════════════════════════════════════════════════
 
-[学术会议]
-/\bICLR\b|\bNeurIPS\b|\bICML\b|\bACL\b|\bEMNLP\b|\bAAAI\b/ => 学术会议
-
 [论文]
 /arXiv|论文|技术报告|preprint|研究论文/ => 论文
-
-[Papers With Code]
-/Papers With Code|SOTA|State-of-the-Art|基准测试/ => 论文排行
+/\bICLR\b|\bNeurIPS\b|\bICML\b|\bACL\b|\bEMNLP\b/ => 学术会议
+/Papers With Code|\bSOTA\b|基准测试/ => 论文排行
