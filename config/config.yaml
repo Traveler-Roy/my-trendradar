@@ -105,73 +105,84 @@ rss:
   # - 正整数：覆盖全局设置，只推送此天数内的文章
   # - 0：禁用此频道的新鲜度过滤，推送所有文章
   feeds:
-    # 科技类
+    # ── 行业资讯 ──
     - id: "hacker-news"
       name: "Hacker News"
       url: "https://hnrss.org/frontpage"
 
-    - id: "techcrunch"
-      name: "TechCrunch"
-      url: "https://techcrunch.com/feed/"
+    - id: "techcrunch-ai"
+      name: "TechCrunch AI"
+      url: "https://techcrunch.com/category/artificial-intelligence/feed/"
 
-    - id: "the-verge"
-      name: "The Verge"
-      url: "https://www.theverge.com/rss/index.xml"
-
-    - id: "arstechnica"
-      name: "ArsTechnica"
-      url: "https://feeds.arstechnica.com/arstechnica/index"
+    - id: "the-verge-ai"
+      name: "The Verge AI"
+      url: "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"
 
     - id: "36kr"
       name: "36氪"
       url: "https://36kr.com/feed"
 
-    - id: "sspai"
-      name: "少数派"
-      url: "https://sspai.com/feed"
-
     - id: "infoq-cn"
       name: "InfoQ 中文"
       url: "https://www.infoq.cn/feed"
 
-    # AI/开发类
-    - id: "openai-blog"
-      name: "OpenAI Blog"
-      url: "https://openai.com/blog/rss.xml"
+    # ── Agent 专业源 ──
+    - id: "anthropic-blog"
+      name: "Anthropic Blog"
+      url: "https://www.anthropic.com/rss.xml"
 
-    - id: "huggingface-blog"
-      name: "Hugging Face Blog"
-      url: "https://huggingface.co/blog/feed.xml"
+    - id: "langchain-blog"
+      name: "LangChain Blog"
+      url: "https://blog.langchain.dev/rss/"
 
-    - id: "github-trending"
-      name: "GitHub Trending"
-      url: "https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml"
+    - id: "openai-research"
+      name: "OpenAI Research"
+      url: "https://openai.com/research/rss.xml"
 
-    - id: "devto"
-      name: "Dev.to"
-      url: "https://dev.to/feed"
+    # ── 向量数据库专业源 ──
+    - id: "milvus-blog"
+      name: "Milvus Blog"
+      url: "https://milvus.io/blog/rss.xml"
 
-    # 财经类
-    - id: "wallstreetcn"
-      name: "华尔街见闻"
-      url: "https://wallstreetcn.com/rss/news/global"
+    - id: "weaviate-blog"
+      name: "Weaviate Blog"
+      url: "https://weaviate.io/blog/feed"
 
-    - id: "ruanyifeng"
-      name: "阮一峰周刊"
-      url: "https://www.ruanyifeng.com/blog/atom.xml"
+    - id: "pinecone-blog"
+      name: "Pinecone Blog"
+      url: "https://www.pinecone.io/blog/rss/"
 
-    # 综合/新闻类
-    - id: "nytimes-cn"
-      name: "纽约时报中文"
-      url: "https://cn.nytimes.com/rss/"
+    - id: "qdrant-blog"
+      name: "Qdrant Blog"
+      url: "https://qdrant.tech/blog/rss.xml"
 
-    - id: "theinitium"
-      name: "端传媒"
-      url: "https://theinitium.com/newsfeed/"
+    - id: "chroma-blog"
+      name: "Chroma Blog"
+      url: "https://blog.trychroma.com/feed"
 
-    - id: "huxiu"
-      name: "虎嗅"
-      url: "https://www.huxiu.com/rss/0.xml"
+    # ── 学术论文源 ──
+    - id: "arxiv-cs-ai"
+      name: "arXiv cs.AI"
+      url: "https://rss.arxiv.org/rss/cs.AI"
+      max_age_days: 2
+
+    - id: "arxiv-cs-lg"
+      name: "arXiv cs.LG"
+      url: "https://rss.arxiv.org/rss/cs.LG"
+      max_age_days: 2
+
+    - id: "arxiv-cs-db"
+      name: "arXiv cs.DB"
+      url: "https://rss.arxiv.org/rss/cs.DB"
+      max_age_days: 2
+
+    - id: "paperswithcode"
+      name: "Papers With Code"
+      url: "https://paperswithcode.com/latest.rss"
+
+    - id: "huggingface-papers"
+      name: "HuggingFace Papers"
+      url: "https://huggingface.co/papers/rss"
 
 
 # ===============================================================
@@ -251,10 +262,10 @@ display:
   # 调整顺序：剪切粘贴整行即可
   # 要显示某个区域，需同时：1. 在此列表中  2. 下方 regions 对应开关为 true
   region_order:
-    - new_items                           # 1️⃣ 新增热点区域
-    - hotlist                             # 2️⃣ 热榜区域（关键词匹配 / AI 智能筛选）
-    - rss                                 # 3️⃣ RSS 订阅区域
-    - standalone                          # 4️⃣ 独立展示区
+    - standalone                          # 1️⃣ 独立展示区（arXiv论文置顶）
+    - new_items                           # 2️⃣ 新增热点区域
+    - hotlist                             # 3️⃣ 热榜区域（关键词匹配 / AI 智能筛选）
+    - rss                                 # 4️⃣ RSS 订阅区域
     - ai_analysis                         # 5️⃣ AI 分析区域
 
   # 推送区域开关（需配合上方 region_order 使用）
@@ -264,15 +275,15 @@ display:
                                       # 注：热点词汇统计中的新增标记🆕不受此配置影响
 
     rss: true                         # RSS 订阅区域（true=显示并分析, false=隐藏并跳过分析）
-    standalone: false                 # 独立展示区：完整热榜/RSS，不受关键词过滤（true=显示, false=隐藏）
+    standalone: true                 # 独立展示区：完整热榜/RSS，不受关键词过滤（true=显示, false=隐藏）
     ai_analysis: true                 # AI 分析区域（true=显示, false=隐藏）
 
   # 独立展示区：将指定平台/RSS 完整展示，不受关键词过滤
   # 推送展示由 regions.standalone 控制，AI 分析由 ai_analysis.include_standalone 控制
   standalone:
-    platforms: ["zhihu", "wallstreetcn-hot"]     # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
-    rss_feeds: []                                # RSS 源 ID 列表（如 ["hacker-news"]）
-    max_items: 20                                # 每个源最多展示条数（0=不限制）
+    platforms: []                                    # 热榜平台 ID 列表
+    rss_feeds: ["arxiv-cs-ai", "arxiv-cs-lg", "arxiv-cs-db", "paperswithcode", "huggingface-papers"]  # arXiv论文独立展示
+    max_items: 30                                    # 每个源最多展示条数（0=不限制）
 
 
 # ===============================================================
@@ -449,7 +460,7 @@ ai_analysis:
   max_news_for_analysis: 150        # 参与分析的新闻数量上限（控制 token 成本的关键项）
                                     # 热榜优先占用配额，RSS 用剩余配额，独立展示区不受此限制
 
-  include_rss: false                # 是否包含 RSS 内容进行分析（true=包含, false=不包含）
+  include_rss: true                 # 是否包含 RSS 内容进行分析（true=包含, false=不包含）
   include_standalone: true          # 是否纳入独立展示区数据（true=纳入, false=不纳入）
 
   include_rank_timeline: true       # 排名时间线详细程度
